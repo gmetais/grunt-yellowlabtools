@@ -11,12 +11,15 @@ Using audit tools is great, but you're going to use it once or twice, then forge
 3. Forget about it...
 4. ...until the day something goes wrong and the task fails
 
-Unlike most of the similar tools ([grunt-pagespeed](https://github.com/jrcryer/grunt-pagespeed), [grunt-perfbudget](https://github.com/tkadlec/grunt-perfbudget), grunt-pagespeedio)
 
-I recommend using this grunt-task if:
+I recommend using this grunt task if:
  - you're a developper and you're optimizing your code
  - you're a devOps and you want to block a release while the staging website is not perfect
  - you're a team and you're practicing continous integration
+
+
+Unlike most of the similar tools ([grunt-pagespeed](https://github.com/jrcryer/grunt-pagespeed), [grunt-perfbudget](https://github.com/tkadlec/grunt-perfbudget), [grunt-pagespeedio](https://github.com/sitespeedio/grunt-sitespeedio)), grunt-yellowlabtools runs **locally** instead of calling a server you don't own. This is great for testing non-public pages!
+
 
 
 ## Getting Started
@@ -67,7 +70,7 @@ grunt.initConfig({
         'fail if at least one url has a domElementsCount > 2000'
       ]
     }
-  },
+  }
 });
 ```
 
@@ -94,11 +97,11 @@ grunt.initConfig({
         'fail if at least one url has a global score < 80/100'
       ]
     }
-  },
+  }
 });
 ```
 
-The words `if at least one url` are not very relevant if you only test one url, but don't forget them.
+The words `if at least one url` are not very relevant when testing only one url. But don't forget them.
 
 
 #### Define a threshold for every rule
@@ -114,7 +117,7 @@ grunt.initConfig({
         'fail if at least one url has a rule score < 40/100'
       ]
     }
-  },
+  }
 });
 ```
 
@@ -133,11 +136,11 @@ grunt.initConfig({
         'ignore globalVariables'
       ]
     }
-  },
+  }
 });
 ```
 
-These two rules will never complain again. Please note that ignoring rules will have no effect on the global score.
+These two ignored rules will never complain again. Please note that ignoring rules will have no effect on the global score.
 
 
 #### Define a threshold for a single rule
@@ -153,13 +156,13 @@ grunt.initConfig({
         'fail if at least one url has a DOMelementMaxDepth score < 90/100'
       ]
     }
-  },
+  }
 });
 ```
 
 See the list of rules in the next chapter.
 
-If you define a threshold for every rule, adding a single rule condition has the power to override it. For example, you can assert check that every rule score is over 80 **except** DOMelementMaxDepth that can be as low as 12.
+If you defined a threshold for every rule, adding a single rule condition has the power to override it. For example, you can assert check that every rule score is over 80 **except** DOMelementMaxDepth that can be as low as 12.
 
 
 #### Define a threshold on a metric
@@ -175,7 +178,7 @@ grunt.initConfig({
         'fail if at least one url has a DOMelementsCount > 2000'
       ]
     }
-  },
+  }
 });
 ```
 
