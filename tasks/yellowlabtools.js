@@ -2,49 +2,73 @@
  * grunt-yellowlabtools
  * https://github.com/gmetais/grunt-yellowlabtools
  *
- * Copyright (c) 2014 Gaël Métais
+ * Copyright (c) 2015 Gaël Métais
  * Licensed under the GPL license.
  */
 
 'use strict';
 
+var LocalRunner = require('./lib/localRunner');
+var conditions = require('./lib/conditions');
+
+
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+    grunt.registerMultiTask('yellowlabtools', 'Grunt plugin for YellowLabTools', function() {
 
-  grunt.registerMultiTask('yellowlabtools', 'Grunt plugin for YellowLabTools', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
+        var failConditions = this.data.failConditions;
+        var conditionsObject;
+        var urls = this.data.urls;
+        var urlsCount = urls.length;
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
+        if (!urls || urlsCount === 0) {
+            grunt.log.writeln('No given url');
+            return;
         }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
 
-      // Handle options.
-      src += options.punctuation;
+        var done = this.async();
+        var localRunner = new LocalRunner(grunt);
+        var options = this.options({
+      
+        });
 
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
+        conditions.parsePhraseConditions(failConditions)
 
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
+            .then(function(obj) {
+                conditionsObject = obj;
+                return localRunner.launchRuns(urls);
+            })
+
+            .then(function(results) {
+                return conditions.checkFailConditions(results, conditionsObject);
+            })
+
+            .then(function(fails) {
+                if (fails.length > 0) {
+                    fails.forEach(function(fail) {
+                        grunt.log.error(fail);
+                    });
+                    done(false);
+                } else {
+                    grunt.log.ok('%d urls tested', urlsCount);
+                    done();
+                }
+            })
+
+            .fail(function(error) {
+                grunt.log.error(error);
+                done(false);
+            });
     });
-  });
+
+    function printFailResults(fails) {
+        if (fails.length > 0) {
+            fails.forEach(function(fail) {
+                grunt.log.error(fail);
+            });
+        } else {
+            grunt.log.ok();
+        }
+    }
 
 };

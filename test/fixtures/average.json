@@ -1,0 +1,212 @@
+{
+    "scoreProfiles": {
+        "generic": {
+            "globalScore": 37
+        }
+    },
+    "rules": {
+        "DOMelementMaxDepth": {
+            "score": 20,
+            "value": 18.5
+        },
+        "DOMelementsCount": {
+            "score": 18,
+            "value": 3106.5
+        },
+        "DOMidDuplicated": {
+            "score": 60,
+            "value": 2
+        },
+        "DOMinserts": {
+            "score": 93,
+            "value": 37
+        },
+        "DOMqueries": {
+            "score": 54.5,
+            "value": 484.5
+        },
+        "DOMqueriesAvoidable": {
+            "score": 33,
+            "value": 134.5
+        },
+        "DOMqueriesWithoutResults": {
+            "score": 26.5,
+            "value": 165
+        },
+        "cachingDisabled": {
+            "score": 46,
+            "value": 6.5
+        },
+        "cachingNotSpecified": {
+            "score": 83.5,
+            "value": 6.5
+        },
+        "cachingTooShort": {
+            "score": 96.5,
+            "value": 3
+        },
+        "closedConnections": {
+            "score": 100,
+            "value": 0
+        },
+        "consoleMessages": {
+            "score": 100,
+            "value": 0
+        },
+        "cssColors": {
+            "score": 19,
+            "value": 249.5
+        },
+        "cssComplexSelectors": {
+            "score": 41,
+            "value": 294.5
+        },
+        "cssComplexSelectorsByAttribute": {
+            "score": 75,
+            "value": 12.5
+        },
+        "cssCount": {
+            "score": 71.5,
+            "value": 5
+        },
+        "cssDuplicatedProperties": {
+            "score": 36,
+            "value": 37
+        },
+        "cssDuplicatedSelectors": {
+            "score": 7.5,
+            "value": 71
+        },
+        "cssEmptyRules": {
+            "score": 100,
+            "value": 0
+        },
+        "cssExpressions": {
+            "score": 100,
+            "value": 0
+        },
+        "cssImportants": {
+            "score": 0,
+            "value": 442
+        },
+        "cssImports": {
+            "score": 100,
+            "value": 0
+        },
+        "cssOldIEFixes": {
+            "score": 0,
+            "value": 124.5
+        },
+        "cssOldPropertyPrefixes": {
+            "score": 0,
+            "value": 187
+        },
+        "cssParsingErrors": {
+            "score": 50,
+            "value": 0.5
+        },
+        "cssRedundantBodySelectors": {
+            "score": 92,
+            "value": 4
+        },
+        "cssRedundantChildNodesSelectors": {
+            "score": 46,
+            "value": 71.5
+        },
+        "cssRules": {
+            "score": 26,
+            "value": 3872.5
+        },
+        "cssUniversalSelectors": {
+            "score": 61.5,
+            "value": 15.5
+        },
+        "documentWriteCalls": {
+            "score": 95,
+            "value": 0.5
+        },
+        "domains": {
+            "score": 53.5,
+            "value": 17
+        },
+        "evalCalls": {
+            "score": 95,
+            "value": 0.5
+        },
+        "eventsBound": {
+            "score": 0,
+            "value": 943
+        },
+        "globalVariables": {
+            "score": 2.5,
+            "value": 78
+        },
+        "htmlCount": {
+            "score": 100,
+            "value": 3.5
+        },
+        "iframesCount": {
+            "score": 73,
+            "value": 5.5
+        },
+        "imageCount": {
+            "score": 0,
+            "value": 108
+        },
+        "jQueryVersion": {
+            "score": 10
+        },
+        "jQueryVersionsLoaded": {
+            "score": 100,
+            "value": 1
+        },
+        "jsCount": {
+            "score": 45,
+            "value": 15
+        },
+        "jsErrors": {
+            "score": 100,
+            "value": 0
+        },
+        "jsonCount": {
+            "score": 100,
+            "value": 0.5
+        },
+        "multipleRequests": {
+            "score": 83.5,
+            "value": 0.5
+        },
+        "notFound": {
+            "score": 50,
+            "value": 1
+        },
+        "otherCount": {
+            "score": 70,
+            "value": 9
+        },
+        "requests": {
+            "score": 0,
+            "value": 143
+        },
+        "smallCssFiles": {
+            "score": 100,
+            "value": 0
+        },
+        "smallImages": {
+            "score": 0,
+            "value": 27
+        },
+        "smallJsFiles": {
+            "score": 69,
+            "value": 3.5
+        },
+        "videoCount": {
+            "score": 100,
+            "value": 0
+        },
+        "webfontCount": {
+            "score": 33,
+            "value": 2
+        }
+    }
+}
