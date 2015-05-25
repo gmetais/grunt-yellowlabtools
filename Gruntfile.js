@@ -56,6 +56,58 @@ module.exports = function(grunt) {
                     'ignore jsErrors',
                     'fail if at least one url has a DOMelementsCount > 300'
                 ]
+            },
+            ecommerce: {
+                urls: [
+                    'Amazon.com',
+                    'Ebay.com',
+                    'Netflix.com',
+                    'www.etsy.com/',
+                    'Walmart.com',
+                    'Ikea.com',
+                    'Homedepot.com',
+                    'Bestbuy.com',
+                    'Target.com',
+                    'Groupon.com',
+                    'Store.steampowered.com',
+                    'Newegg.com',
+                    'Macys.com',
+                    'Lowes.com',
+                    'Gap.com',
+                    '6pm.com',
+                    'Nordstrom.com',
+                    'Hm.com',
+                    'Kohls.com',
+                    'Nike.com'
+                ]
+            },
+            news: {
+                urls: [
+                    
+
+                    'Reuters.com',
+                    'Wunderground.com',
+                    'Nbcnews.com',
+                    'Latimes.com',
+
+
+                    'Reddit.com',
+                    'News.yahoo.com',
+                    'Cnn.com',
+                    'Nytimes.com',
+                    'Weather.com',
+                    'news.google.com/',
+                    'Theguardian.com',
+                    'Timesofindia.indiatimes.com',
+                    'Bbc.co.uk/news/',
+                    'Foxnews.com',
+                    'Washingtonpost.com',
+                    'Shutterstock.com',
+                    'Individual.com',
+                    'Usatoday.com',
+                    'Bloomberg.com',
+                    'Accuweather.com'
+                ]
             }
         },
 

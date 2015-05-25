@@ -198,11 +198,13 @@ Here is the list of rules you can threshold.
 * DOMidDuplicated: number of duplicated IDs found in DOM
 
 #### DOM manipulations
-* DOMinserts: number of DOM nodes inserts
-* DOMqueries: number of DOM queries by id, className, tagName or querySelector
-* DOMqueriesWithoutResults: number of DOM queries that returned nothing
+* DOMaccesses: number of calls to DOM related functions, from both DOM api and jQuery
+* queriesWithoutResults: number of queries that returned nothing
 * DOMqueriesAvoidable: number of repeated uses of a duplicated query
-* eventsBound: number of addEventListener calls
+
+#### Scroll bottlenecks
+* eventsScrollBound: number of scroll event listeners binded to window or document
+* DOMaccessesOnScroll: number of DOM-accessing functions calls on a scroll event
 
 #### Bad JavaScript
 * jsErrors: number of JavaScript errors
@@ -213,9 +215,9 @@ Here is the list of rules you can threshold.
 #### jQuery version
 * jQueryVersion: version of jQuery framework (if loaded)
 * jQueryVersionsLoaded: number of loaded jQuery "instances"
-
-#### CSS syntax errors
-* cssParsingErrors: number of CSS files that failed to be parse by analyze-css
+* jQueryFunctionsUsed: number of different core jQuery functions called on load
+* jQueryCallsOnEmptyObject: number of jQuery functions called on an empty jQuery object
+* jQueryNotDelegatedEvents: number of events bound without using event delegation
 
 #### CSS complexity
 * cssRules: number of CSS rules
@@ -224,6 +226,7 @@ Here is the list of rules you can threshold.
 * cssColors: number of unique colors used in CSS
 
 #### Bad CSS
+* cssParsingErrors: number of syntax error found in the CSS
 * cssImports: number of `@import` rules
 * cssDuplicatedSelectors: number of CSS selectors defined more than once
 * cssDuplicatedProperties: number of CSS property definitions duplicated within a selector
@@ -254,6 +257,7 @@ Here is the list of rules you can threshold.
 
 #### Network
 * notFound: number of HTTP 404 responses
+* assetsNotGzipped: number of requests that should be compressed with gzip but aren't
 * closedConnections: number of requests not keeping the connection alive
 * multipleRequests: number of static assets that are requested more than once
 * cachingDisabled: responses with caching disabled
