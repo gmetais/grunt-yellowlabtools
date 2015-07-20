@@ -1,7 +1,7 @@
 {
   "name": "grunt-yellowlabtools",
   "description": "Grunt plugin for YellowLabTools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/gmetais/grunt-yellowlabtools",
   "author": {
     "name": "Gaël Métais",
@@ -30,6 +30,7 @@
   "dependencies": {
     "async": "1.4.0",
     "q": "1.4.1",
+    "request": "2.59.0",
     "yellowlabtools": "1.7.2"
   },
   "devDependencies": {
@@ -41,7 +42,6 @@
     "grunt-mocha-test": "^0.12.7",
     "matchdep": "^0.3.0",
     "mocha": "^2.2.5",
-    "request": "2.59.0",
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0"
   },
