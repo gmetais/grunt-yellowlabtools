@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                     'https://twitter.com/tos'
                 ],
                 failConditions: [
-                    'fail if at least one url has a global score < 70/100'
+                    'fail if at least one url has a global score < 20/100'
                 ],
                 options: {
                     locally: true
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                     'https://twitter.com/tos'
                 ],
                 failConditions: [
-                    'fail if at least one url has a global score < 70/100'
+                    'fail if at least one url has a global score < 20/100'
                 ],
                 options: {
                     locally: false
