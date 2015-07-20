@@ -18,7 +18,7 @@ I recommend using this grunt task if:
  - you're a team and you're practicing continous integration
 
 
-Unlike most of the similar tools ([grunt-pagespeed](https://github.com/jrcryer/grunt-pagespeed), [grunt-perfbudget](https://github.com/tkadlec/grunt-perfbudget), [grunt-pagespeedio](https://github.com/sitespeedio/grunt-sitespeedio)), grunt-yellowlabtools runs **locally** instead of calling a server you don't own. This is great for testing non-public pages!
+Unlike most of the similar tools ([grunt-pagespeed](https://github.com/jrcryer/grunt-pagespeed), [grunt-perfbudget](https://github.com/tkadlec/grunt-perfbudget), [grunt-pagespeedio](https://github.com/sitespeedio/grunt-sitespeedio)), grunt-yellowlabtools can run **locally** (default behavior), instead of calling a server you don't own. This is great for testing non-public pages!
 
 
 
@@ -70,7 +70,7 @@ grunt.initConfig({
         'fail if at least one url has a domElementsCount > 2000'
       ],
       options: {
-
+        device: 'mobile'
       }
     }
   }
@@ -87,19 +87,20 @@ Use "phone" or "tablet" to simulate a mobile device (by user-agent and viewport 
 Adds a cookie on the main domain. Example: `bar=foo;domain=url`.
 
 ##### authUser [String] & authPass [String]
-Your credentials if you need to bypass a basic HTTP authentication. 
+Your credentials if you need to bypass a basic HTTP authentication.  
 If your authentication is not basic, you might be able to copy the session cookie from your browser, paste it in the "Cookie" setting and launch a run before your cookie expires.
 
 ##### locally [Boolean]
-By default, runs are launched locally, using the NodeJS version of YLT (without the HTML user interface). If you want to run the tests remotely on a YLT server (the public instance or your own instance, set this boolean to false). Default is true. 
-Please note that local tests are much faster than the YLT's public instance, where your runs will be queued and limited to 50 runs per day.
+By default, runs are launched locally, using the NodeJS version of YLT (without the HTML user interface). If you want to run the tests remotely on a YLT server (the public instance or your own instance), set this boolean to false. Default is true.  
+Please note that local tests are much faster than the YLT's public instance, where your runs will be queued and limited to 50 runs per day.  
+However, running on a distant server provides you with the url of the HTML report, and that's pretty cool!
 
 ##### serverUrl [String]
-When `locally` is false, this is the url of the server you want to run the tests on. Default is the public instance `http://yellowlab.tools`. 
+When `locally` is false, this is the url of the server you want to run the tests on. Default is the public instance `http://yellowlab.tools`.  
 If you need to launch more runs (or for any other reason), you can run the test on your own private instance (see [How to install your private server](https://github.com/gmetais/YellowLabTools/wiki/Install-your-private-server)).
 
 ##### apiKey [String]
-To avoid abuse and keep the service free for everyone, the API will block your IP if you launched more than 50 runs in the last 24h. 
+To avoid abuse and keep the service free for everyone, the API will block your IP if you launched more than 50 runs in the last 24h.  
 If you have a good reason, please email me so I can give you an api-key. You can also create and host [your private instance](https://github.com/gmetais/YellowLabTools/wiki/Install-your-private-server).
 
 
