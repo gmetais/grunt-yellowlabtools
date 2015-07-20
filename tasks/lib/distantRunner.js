@@ -25,7 +25,8 @@ var DistantRunner = function(grunt) {
 
                 .then(function(runResult) {
                     var endTime = Date.now();
-                    grunt.log.writeln(' [Global score is %d/100] (took %dms) ', runResult.scoreProfiles.generic.globalScore, endTime - startTime);
+                    var resultsUrl = options.serverUrl + '/result/' + runResult.runId;
+                    grunt.log.writeln(' [Global score is %d/100] (took %dms) - Details here: %s', runResult.scoreProfiles.generic.globalScore, endTime - startTime, resultsUrl);
                     results.push(runResult);
                     callback();
                 })
