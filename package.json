@@ -1,7 +1,7 @@
 {
   "name": "grunt-yellowlabtools",
   "description": "Grunt plugin for YellowLabTools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/gmetais/grunt-yellowlabtools",
   "author": {
     "name": "Gaël Métais",
