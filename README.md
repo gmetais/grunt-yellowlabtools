@@ -191,6 +191,20 @@ Defining a threshold on a metric overrides any score threshold you might have de
 
 Here is the list of rules you can threshold.
 
+#### Page weight
+* totalWeight: total number of bytes downloaded
+* imageOptimization: number of bytes that could be saved by optimising images
+* gzipCompression: number of bytes that could be saved by compressing file transfers
+* fileMinification: number of bytes that could be saved by minifying JS, CSS and HTML
+
+#### Requests
+* totalRequests: total number of HTTP requests made
+* domains: number of domains used
+* notFound: number of HTTP 404 responses
+* multipleRequests: number of static assets that are requested more than once
+* smallRequests: requests that are smaller than 2 KB
+* lazyLoadableImagesBelowTheFold: images displayed below the fold that could be lazy-loaded
+
 #### DOM complexity
 * DOMelementsCount: total number of HTML element nodes
 * DOMelementMaxDepth: maximum level on nesting of HTML element node
@@ -212,7 +226,7 @@ Here is the list of rules you can threshold.
 * consoleMessages: number of calls to console.* functions
 * globalVariables: number of JS globals variables
 
-#### jQuery version
+#### jQuery
 * jQueryVersion: version of jQuery framework (if loaded)
 * jQueryVersionsLoaded: number of loaded jQuery "instances"
 * jQueryFunctionsUsed: number of different core jQuery functions called on load
@@ -239,31 +253,11 @@ Here is the list of rules you can threshold.
 * cssRedundantBodySelectors: number of redundant body selectors (e.g. `body .foo`)
 * cssRedundantChildNodesSelectors: number of redundant child nodes selectors (e.g. `ul li`, `table tr`)
 
-#### Requests number
-* requests: total number of HTTP requests made
-* htmlCount: number of HTML responses
-* jsCount: number of JS responses
-* cssCount: number of CSS responses
-* imageCount: number of image responses
-* webfontCount: number of web font responses
-* videoCount: number of video responses
-* jsonCount: number of JSON responses
-* otherCount: number of other responses
-
-#### Small requests
-* smallJsFiles: number of JS assets smaller than 2 KB
-* smallCssFiles: number of CSS assets smaller than 2 KB
-* smallImages: images smaller than 2 KB
-
-#### Network
-* notFound: number of HTTP 404 responses
-* assetsNotGzipped: number of requests that should be compressed with gzip but aren't
+#### Server config
 * closedConnections: number of requests not keeping the connection alive
-* multipleRequests: number of static assets that are requested more than once
-* cachingDisabled: responses with caching disabled
 * cachingNotSpecified: responses with no caching header sent
+* cachingDisabled: responses with caching disabled
 * cachingTooShort: responses with too short caching time (less than a week)
-* domains: number of domains used
 
 
 

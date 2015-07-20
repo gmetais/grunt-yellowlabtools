@@ -30,7 +30,7 @@
   "dependencies": {
     "async": "^1.0.0",
     "q": "^1.4.1",
-    "yellowlabtools": "^1.6.0"
+    "yellowlabtools": "^1.7.2"
   },
   "devDependencies": {
     "chai": "^2.3.0",
