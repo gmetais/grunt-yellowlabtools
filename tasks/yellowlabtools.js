@@ -8,8 +8,9 @@
 
 'use strict';
 
-var LocalRunner = require('./lib/localRunner');
-var conditions = require('./lib/conditions');
+var LocalRunner     = require('./lib/localRunner');
+var DistantRunner   = require('./lib/distantRunner');
+var conditions      = require('./lib/conditions');
 
 
 module.exports = function(grunt) {
@@ -27,16 +28,25 @@ module.exports = function(grunt) {
         }
 
         var done = this.async();
-        var localRunner = new LocalRunner(grunt);
+
         var options = this.options({
-      
+            locally: true,
+            serverUrl: 'http://yellowlab.tools',
+            device: 'desktop'
         });
+
+        var runner;
+        if (options.locally) {
+            runner = new LocalRunner(grunt);
+        } else {
+            runner = new DistantRunner(grunt);
+        }
 
         conditions.parsePhraseConditions(failConditions)
 
             .then(function(obj) {
                 conditionsObject = obj;
-                return localRunner.launchRuns(urls);
+                return runner.launchRuns(urls, options);
             })
 
             .then(function(results) {
