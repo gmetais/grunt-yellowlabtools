@@ -23,20 +23,20 @@ var DistantRunner = function(grunt) {
 
             requestRunAndWaitForResponse(currentUrl, options)
 
-                .then(function(runResult) {
-                    var endTime = Date.now();
-                    var resultsUrl = options.serverUrl + '/result/' + runResult.runId;
-                    grunt.log.writeln(' [Global score is %d/100] (took %dms) - Details here: %s', runResult.scoreProfiles.generic.globalScore, endTime - startTime, resultsUrl);
-                    results.push(runResult);
-                    callback();
-                })
+            .then(function(runResult) {
+                var endTime = Date.now();
 
-                .fail(callback);
+                var resultsUrl = options.serverUrl + '/result/' + runResult.runId;
+                grunt.log.writeln(' [Global score is %d/100] (took %dms) - Details here: %s', runResult.scoreProfiles.generic.globalScore, endTime - startTime, resultsUrl);
+                results.push(runResult);
+                callback();
+            })
+
+            .fail(callback);
 
         }, function(error) {
             if (error) {
-                grunt.log.error('YellowLabTools run failed on page %s with error: %d', currentUrl, error);
-                deferred.reject(error);
+                deferred.reject('YellowLabTools run failed on page ' + currentUrl + ' with error: ' + error);
             } else {
                 deferred.resolve(results);
             }
@@ -78,7 +78,9 @@ var DistantRunner = function(grunt) {
         request(reqOptions, function(error, response, body) {
             if (error) {
                 deferred.reject(error);
-            } else {
+            } else if (response.statusCode !== 200) {
+                deferred.reject(response.statusCode + ' ' + response.body);
+            }else {
                 deferred.resolve(body);
             }
         });

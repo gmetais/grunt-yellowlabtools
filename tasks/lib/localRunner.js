@@ -29,19 +29,18 @@ var LocalRunner = function(grunt) {
             
             ylt(currentUrl, yltOptions)
 
-                .then(function(runResult) {
-                    var endTime = Date.now();
-                    grunt.log.writeln(' [Global score is %d/100] (took %dms) ', runResult.scoreProfiles.generic.globalScore, endTime - startTime);
-                    results.push(runResult);
-                    callback();
-                })
+            .then(function(runResult) {
+                var endTime = Date.now();
+                grunt.log.writeln(' [Global score is %d/100] (took %dms) ', runResult.scoreProfiles.generic.globalScore, endTime - startTime);
+                results.push(runResult);
+                callback();
+            })
 
-                .fail(callback);
+            .fail(callback);
 
         }, function(error) {
             if (error) {
-                grunt.log.error('YellowLabTools run failed on page %s with error: %d', currentUrl, error);
-                deferred.reject(error);
+                deferred.reject('YellowLabTools run failed on page ' + currentUrl + ' with error: ' + error);
             } else {
                 deferred.resolve(results);
             }
