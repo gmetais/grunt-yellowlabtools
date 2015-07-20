@@ -37,7 +37,7 @@ describe('localRunner', function() {
 
         var url = 'http://localhost:8388/simple-page.html';
 
-        localRunner.launchRuns([url])
+        localRunner.launchRuns([url], {})
             .then(function(results) {
 
                 results.should.be.an('array');
@@ -71,7 +71,7 @@ describe('localRunner', function() {
 
         var url = 'http://localhost:8388/simple-page.html';
 
-        localRunner.launchRuns([url, url])
+        localRunner.launchRuns([url, url], {})
             .then(function(results) {
 
                 results.should.be.an('array');

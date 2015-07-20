@@ -34,14 +34,29 @@ module.exports = function(grunt) {
 
         // Configuration to be run (and then tested).
         yellowlabtools: {
-            twitter: {
+            twitterLocal: {
                 urls: [
                     'https://twitter.com',
                     'https://twitter.com/tos'
                 ],
                 failConditions: [
-                    'fail if at least one url has a global score < 70/100'
-                ]
+                    'fail if at least one url has a global score < 1/100'
+                ],
+                options: {
+                    locally: true
+                }
+            },
+            twitterDistant: {
+                urls: [
+                    'https://twitter.com',
+                    'https://twitter.com/tos'
+                ],
+                failConditions: [
+                    'fail if at least one url has a global score < 1/100'
+                ],
+                options: {
+                    locally: false
+                }
             },
             github: {
                 urls: [
