@@ -210,9 +210,31 @@ The only difference between a metric threshold and a score threshold is the `sco
 Defining a threshold on a metric overrides any score threshold you might have defined.
 
 
+#### Define a threshold on file weights
+
+```js
+grunt.initConfig({
+  yellowlabtools: {
+    production: {
+      urls: [
+        'http://mywebsite.com'
+      ],
+      failConditions: [
+        'fail if a request containing widgets.js is bigger than 120KB',
+        'fail if a request matching ^http:\/\/mywebsite\.com\/.*\.js$ is bigger than 6800B',
+        'fail if a request is bigger than 300KB',
+        'fail if an image is bigger than 1MB'
+      ]
+    }
+  }
+});
+```
+
+
+
 ## Rules
 
-Here is the list of rules you can threshold.
+Here is the list of YellowLabTools rules you can threshold.
 
 #### Page weight
 * totalWeight: total number of bytes downloaded
