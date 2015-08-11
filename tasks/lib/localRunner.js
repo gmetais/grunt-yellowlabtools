@@ -31,7 +31,8 @@ var LocalRunner = function(grunt) {
 
             .then(function(runResult) {
                 var endTime = Date.now();
-                grunt.log.writeln(' [Global score is %d/100] (took %dms) ', runResult.scoreProfiles.generic.globalScore, endTime - startTime);
+                var duration = Math.round((endTime - startTime) / 1000);
+                grunt.log.writeln(' [Global score is %d/100] (took %ds) ', runResult.scoreProfiles.generic.globalScore, duration);
                 results.push(runResult);
                 callback();
             })
