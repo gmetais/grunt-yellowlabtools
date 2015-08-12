@@ -53,7 +53,7 @@ describe('localRunner', function() {
                 gruntMock.log.writeln.should.have.been.calledTwice;
                 gruntMock.log.writeln.firstCall.args[0].should.equal('Loading the page %s in PhantomJS... ');
                 gruntMock.log.writeln.firstCall.args[1].should.equal(url);
-                gruntMock.log.writeln.secondCall.args[0].should.equal(' [Global score is %d/100] (took %dms) ');
+                gruntMock.log.writeln.secondCall.args[0].should.equal(' [Global score is %d/100] (took %ds) ');
                 gruntMock.log.writeln.secondCall.args[1].should.equal(100);
                 gruntMock.log.writeln.secondCall.args[1].should.be.at.least(1);
 
