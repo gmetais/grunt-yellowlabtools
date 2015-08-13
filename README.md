@@ -70,7 +70,7 @@ grunt.initConfig({
         'fail if at least one url has a domElementsCount > 2000'
       ],
       options: {
-        device: 'mobile'
+        device: 'phone'
       }
     }
   }

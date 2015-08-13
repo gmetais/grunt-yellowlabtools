@@ -1,11 +1,20 @@
 var async   = require('async');
 var Q       = require('q');
-var ylt     = require('yellowlabtools');
 
 var LocalRunner = function(grunt) {
     
     this.launchRuns = function(urls, options) {
         var deferred = Q.defer();
+        var ylt;
+
+        // Test if the optional YellowLabTools module is installed
+        try {
+            ylt = require('yellowlabtools');
+        } catch(error) {
+            deferred.reject('The npm module "yellowlabtools" is required for local runs. Use "npm install" without the "--no-optional" flag.');
+            return deferred.promise;
+        }
+
 
         var results = [];
         var currentUrl;
@@ -31,7 +40,8 @@ var LocalRunner = function(grunt) {
 
             .then(function(runResult) {
                 var endTime = Date.now();
-                grunt.log.writeln(' [Global score is %d/100] (took %dms) ', runResult.scoreProfiles.generic.globalScore, endTime - startTime);
+                var duration = Math.round((endTime - startTime) / 1000);
+                grunt.log.writeln(' [Global score is %d/100] (took %ds) ', runResult.scoreProfiles.generic.globalScore, duration);
                 results.push(runResult);
                 callback();
             })
