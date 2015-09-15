@@ -1,11 +1,20 @@
 var async   = require('async');
 var Q       = require('q');
-var ylt     = require('yellowlabtools');
 
 var LocalRunner = function(grunt) {
     
     this.launchRuns = function(urls, options) {
         var deferred = Q.defer();
+        var ylt;
+
+        // Test if the optional YellowLabTools module is installed
+        try {
+            ylt = require('yellowlabtools');
+        } catch(error) {
+            deferred.reject('The npm module "yellowlabtools" is required for local runs. Use "npm install" without the "--no-optional" flag.');
+            return deferred.promise;
+        }
+
 
         var results = [];
         var currentUrl;
