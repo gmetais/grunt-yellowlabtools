@@ -42,7 +42,7 @@
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-express": "^1.4.1",
     "grunt-mocha-test": "^0.12.7",
-    "matchdep": "^0.3.0",
+    "matchdep": "^1.0.0",
     "mocha": "^2.2.5",
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0"
