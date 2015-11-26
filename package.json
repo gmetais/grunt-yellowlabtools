@@ -30,7 +30,7 @@
   "dependencies": {
     "async": "1.4.2",
     "q": "1.4.1",
-    "request": "2.62.0"
+    "request": "2.66.0"
   },
   "optionalDependencies": {
     "yellowlabtools": "1.9.0"
