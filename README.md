@@ -227,6 +227,7 @@ Here is the list of rules you can threshold.
 * multipleRequests: number of static assets that are requested more than once
 * smallRequests: requests that are smaller than 2 KB
 * lazyLoadableImagesBelowTheFold: images displayed below the fold that could be lazy-loaded
+* hiddenImages: images that have a display:none, or one of thier parents
 
 #### DOM complexity
 * DOMelementsCount: total number of HTML element nodes
@@ -261,6 +262,9 @@ Here is the list of rules you can threshold.
 * cssComplexSelectors: number of selectors consisting in 4 or more expressions
 * cssComplexSelectorsByAttribute: selectors with complex matching by attribute (e.g. `[class$="foo"]`)
 * cssColors: number of unique colors used in CSS
+* similarColors: colors that are very close to each other
+* cssBreakpoints: number of media queries breakpoints
+* cssMobileFirst: number of media queries that address small devices
 
 #### Bad CSS
 * cssParsingErrors: number of syntax error found in the CSS
