@@ -33,7 +33,7 @@
     "request": "2.67.0"
   },
   "optionalDependencies": {
-    "yellowlabtools": "1.9.1"
+    "yellowlabtools": "1.9.2"
   },
   "devDependencies": {
     "chai": "~3.4.1",
