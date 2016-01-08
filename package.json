@@ -28,7 +28,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "async": "1.5.0",
+    "async": "1.5.2",
     "q": "1.4.1",
     "request": "2.67.0"
   },
