@@ -43,7 +43,7 @@
     "grunt-express": "~1.4.1",
     "grunt-mocha-test": "~0.12.7",
     "matchdep": "~1.0.0",
-    "mocha": "~2.3.4",
+    "mocha": "~2.4.1",
     "sinon": "~1.12.2",
     "sinon-chai": "~2.8.0"
   },
