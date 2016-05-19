@@ -281,6 +281,7 @@ Here is the list of rules you can threshold.
 * cssRedundantChildNodesSelectors: number of redundant child nodes selectors (e.g. `ul li`, `table tr`)
 
 #### Server config
+* http2: the main domain is HTTP/2 or SPDY compatible
 * closedConnections: number of requests not keeping the connection alive
 * cachingNotSpecified: responses with no caching header sent
 * cachingDisabled: responses with caching disabled
