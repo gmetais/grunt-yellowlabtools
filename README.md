@@ -299,4 +299,4 @@ Here is an example of a `yellowlabtools` grunt task failing. I hope it won't hap
 ## Author
 Gaël Métais. I'm a webperf freelance. Follow me on Twitter [@gaelmetais](https://twitter.com/gaelmetais), I tweet about Web Performances, Front-end and new versions of YellowLabTools!
 
-I can also help your company about Web Performances, visit [my website](http://www.gaelmetais.com).
+I can also help your company about Web Performances, visit [my website](https://www.gaelmetais.com).
