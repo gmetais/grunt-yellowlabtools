@@ -283,7 +283,7 @@ function extractGlobalScore(phrase) {
 }
 
 function extractRuleScore(phrase) {
-    var regex = /fail if at least one url has an? ([A-Za-z]+) score (<=?) (-?\d+)\/100/;
+    var regex = /fail if at least one url has an? ([A-Za-z0-9]+) score (<=?) (-?\d+)\/100/;
     var result = regex.exec(phrase);
 
     if (!result) {
@@ -304,7 +304,7 @@ function extractRuleScore(phrase) {
 }
 
 function extractRuleValue(phrase) {
-    var regex = /fail if at least one url has an? ([A-Za-z]+) (>=?) (\d+)/;
+    var regex = /fail if at least one url has an? ([A-Za-z0-9]+) (>=?) (\d+)/;
     var result = regex.exec(phrase);
 
     if (!result) {
@@ -340,7 +340,7 @@ function extractAnyRule(phrase) {
 }
 
 function extractIgnoreRule(phrase) {
-    var regex = /ignore ([A-Za-z]+)/;
+    var regex = /ignore ([A-Za-z0-9]+)/;
     var result = regex.exec(phrase);
 
     if (!result) {
