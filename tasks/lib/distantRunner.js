@@ -41,6 +41,7 @@ var DistantRunner = function(grunt) {
                 var duration = Math.round((endTime - startTime) / 1000);
 
                 var resultsUrl = options.serverUrl + '/result/' + runResult.runId;
+                
                 grunt.log.writeln(' [Global score is %d/100] (took %ds) - Details here: %s', runResult.scoreProfiles.generic.globalScore, duration, resultsUrl);
                 results.push(runResult);
                 callback();
@@ -223,7 +224,8 @@ var DistantRunner = function(grunt) {
         var reqOptions = {
             method: 'GET',
             json: true,
-            uri: options.serverUrl + '/api/results/' + runId
+            gzip: true,
+            uri: options.serverUrl + '/api/results/' + runId + '?exclude=javascriptExecutionTree,toolsResults'
         };
 
         // API Key option
