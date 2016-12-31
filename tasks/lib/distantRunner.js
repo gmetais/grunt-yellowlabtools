@@ -72,7 +72,11 @@ var DistantRunner = function(grunt) {
             //waitForSelector: options.waitForSelector,
             cookie: options.cookie,
             authUser: options.authUser,
-            authPass: options.authPass
+            authPass: options.authPass,
+            proxy: options.proxy,
+            blockDomain: options.blockDomain,
+            allowDomain: options.allowDomain,
+            noExternals: options.noExternals
         };
 
         var reqOptions = {

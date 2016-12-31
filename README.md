@@ -84,11 +84,23 @@ grunt.initConfig({
 Use "phone" or "tablet" to simulate a mobile device (by user-agent and viewport size). Default is "desktop".
 
 ##### cookie [String]
-Adds a cookie on the main domain. Example: `bar=foo;domain=url`.
+Adds a cookie on the main domain. Multiple cookies can be set, comma-separated. Example: `bar1=foo1;domain=.domain1.com|bar2=foo2;domain=www.domain2.com`.
 
 ##### authUser [String] & authPass [String]
 Your credentials if you need to bypass a basic HTTP authentication.  
 If your authentication is not basic, you might be able to copy the session cookie from your browser, paste it in the "Cookie" setting and launch a run before your cookie expires.
+
+##### proxy [String]
+YLT will use an HTTP proxy to reach the tested URL. Example: `domain.com:8080`.
+
+##### blockDomain [String]
+Disallow requests to given domain(s), aka blacklist. Comma separated.
+
+##### allowDomain [String]
+Allow requests to given domain(s), aka whitelist. Comma separated.
+
+##### noExternals [Boolean]
+Block requests to all 3rd party domains.
 
 ##### locally [Boolean]
 By default, runs are launched locally, using the NodeJS version of YLT (without the HTML user interface). If you want to run the tests remotely on a YLT server (the public instance or your own instance), set this boolean to false. Default is true.  
