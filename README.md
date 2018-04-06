@@ -2,7 +2,7 @@
 
 > Grunt plugin for YellowLabTools.
 
-[YellowLabTools](http://yellowlab.tools) is an audit tool that loads a page in PhantomJS and detects front-end **bad practices** and **performance issues**.
+[YellowLabTools](https://yellowlab.tools) is an audit tool that loads a page in PhantomJS and detects front-end **bad practices** and **performance issues**.
 
 Using audit tools is great, but you're going to use it once or twice, then forget about it! This Grunt plugin helps you add a **performance checking** step to your workflow.
 
@@ -108,7 +108,7 @@ Please note that local tests are much faster than the YLT's public instance, whe
 However, running on a distant server provides you with the url of the HTML report, and that's pretty cool!
 
 ##### serverUrl [String]
-When `locally` is false, this is the url of the server you want to run the tests on. Default is the public instance `http://yellowlab.tools`.  
+When `locally` is false, this is the url of the server you want to run the tests on. Default is the public instance `https://yellowlab.tools`.  
 If you need to launch more runs (or for any other reason), you can run the test on your own private instance (see [How to install your private server](https://github.com/gmetais/YellowLabTools/wiki/Install-your-private-server)).
 
 ##### apiKey [String]
