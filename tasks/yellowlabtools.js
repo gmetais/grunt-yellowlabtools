@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
         var options = this.options({
             locally: true,
-            serverUrl: 'http://yellowlab.tools',
+            serverUrl: 'https://yellowlab.tools',
             device: 'desktop'
         });
 
